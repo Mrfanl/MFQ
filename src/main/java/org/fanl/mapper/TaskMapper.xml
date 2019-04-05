@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="org.fanl.mapper.TaskMapper">
+ 	<insert id="insertTask" parameterType="task">
+ 		insert into t_task (taskName,taskTime,completeTime,experimentID,queueID,isWork) values
+ 		(#{taskName},#{taskTime},#{completeTime},#{experimentID},#{queueID},#{isWork})
+ 	</insert>
+ 	<delete id="deleteAllTask">
+ 	    delete from t_task where 1=1
+ 	</delete>  
+ 	<select id="selectAllList" resultType="task">
+ 	    select * from t_task;
+ 	</select>
+ 	<select id="selectTaskisWork" resultType="task">
+ 	   select * from t_task where taskTime = completeTime and isWork = 1
+ 	</select> 
+ 	
+ 	<select id="selectTaskCount" resultType="long">
+ 	  select Count(*) from t_task
+ 	</select>
+ 	<select id="selectNewTaskList" resultType="task">
+        select * from t_task limit #{start},#{len}	  
+ 	</select>
+ 	<update id="updateTask" parameterType="task">
+ 		update t_task 
+		<set>
+			<if test="completeTime != null">
+				completeTime = #{completeTime},
+			</if>
+			<if test="queueID != null">
+				queueID = #{queueID},
+			</if>
+			<if test="isWork != null">
+				isWork = #{isWork}
+			</if>
+		</set>
+		<where>
+			taskID = #{taskID}
+		</where>
+ 	</update>
+</mapper>
