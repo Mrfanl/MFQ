@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="org.fanl.mapper.ExperimentMapper">
+     <insert id="insertExperiment" parameterType="experiment">
+     	insert into t_experiment(experimentName,queueNumber) values(#{experimentName},#{queueNumber})
+     </insert>  
+     <select id="selectExperimentList" resultType="experiment">
+     	select * from t_experiment
+     </select>
+     <select id="selectExperiment" parameterType="long" resultType="experiment">
+        select * from t_experiment where experimentID = #{value}
+     </select>
+</mapper>
