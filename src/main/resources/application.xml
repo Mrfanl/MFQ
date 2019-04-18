@@ -5,8 +5,11 @@
     xmlns:tx="http://www.springframework.org/schema/tx"
     xmlns:context="http://www.springframework.org/schema/context"
     xmlns:mvc="http://www.springframework.org/schema/mvc"
+<<<<<<< HEAD
     xmlns:amq="http://activemq.apache.org/schema/core"
 	xmlns:jms="http://www.springframework.org/schema/jms"
+=======
+>>>>>>> 68508a5418cfc02d716904018664b90fbd1dbfa4
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
     http://www.springframework.org/schema/aop 
@@ -54,6 +57,7 @@
     	<property name="SqlSessionFactoryBeanName" value="SqlSessionFactory"/>
     	<property name="annotationClass" value="org.springframework.stereotype.Repository"/>
     </bean>
+<<<<<<< HEAD
     <!-- 配置spring消息队列 -->
     <!-- 真正可以产生Connection的ConnectionFactory，由对应的 JMS服务厂商提供-->  
 	<bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">  
@@ -86,4 +90,6 @@
 		<property name="messageListener" ref="myMessageListener" />
 	</bean>
     
+=======
+>>>>>>> 68508a5418cfc02d716904018664b90fbd1dbfa4
     </beans>
