@@ -4,9 +4,7 @@
   <artifactId>MFQ</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  
-   
-  
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- spring版本号 -->
@@ -229,7 +227,7 @@
 		    <artifactId>validation-api</artifactId>
 		    <version>1.1.0.Final</version>
 		</dependency>
-<<<<<<< HEAD
+
 		<!-- activeMQ的依赖 -->
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
@@ -249,8 +247,7 @@
 		    <artifactId>fastjson</artifactId>
 		    <version>1.2.56</version>
 		</dependency>
-=======
->>>>>>> 68508a5418cfc02d716904018664b90fbd1dbfa4
+
 				   
     </dependencies>
     

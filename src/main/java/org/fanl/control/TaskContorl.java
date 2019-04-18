@@ -2,38 +2,28 @@
  * 
  */
 package org.fanl.control;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-<<<<<<< HEAD
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.Session;
-
-=======
->>>>>>> 68508a5418cfc02d716904018664b90fbd1dbfa4
 import org.fanl.pojo.Experiment;
 import org.fanl.pojo.Task;
 import org.fanl.service.ExperimentService;
 import org.fanl.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
-<<<<<<< HEAD
+
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
-=======
->>>>>>> 68508a5418cfc02d716904018664b90fbd1dbfa4
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-<<<<<<< HEAD
 import com.alibaba.fastjson.JSON;
 
-=======
->>>>>>> 68508a5418cfc02d716904018664b90fbd1dbfa4
 /**
  * <p>Title:TaskContorl.java</P>
  * <p>Description</P>
@@ -57,7 +47,7 @@ public class TaskContorl {
 		return "task";
 	}
 	
-<<<<<<< HEAD
+
 	@Autowired
 	private JmsTemplate jmsTemplate;
 	
@@ -75,16 +65,10 @@ public class TaskContorl {
 				return session.createTextMessage(taskJson);
 			}
 		});
-=======
-	@RequestMapping("/task/addTask")
-	public @ResponseBody 
-	Map<String,Object> addTask(Task task) {
-		taskService.insertTask(task);
-		Map<String,Object> map = new HashMap<String,Object>();
->>>>>>> 68508a5418cfc02d716904018664b90fbd1dbfa4
 		map.put("taskName", task.getTaskName());
 		return map;
 	}
+
 	
 	@RequestMapping("/task/getExperimentByEID")
 	public @ResponseBody
